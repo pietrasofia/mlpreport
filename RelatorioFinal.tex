@@ -1,0 +1,187 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Modelo de relatório de Disciplina de MLP a partir da
+% classe latex iiufrgs disponivel em http://github.com/schnorr/iiufrgs
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definição do tipo / classe de documento e estilo usado
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\documentclass[rel_mlp]{iiufrgs}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Importação de pacotes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% (a A seguir podem ser importados os pacotes necessários para o documento, de acordo 
+% com a necessidade)
+%
+\usepackage[brazilian]{babel}	    % para texto escrito em pt-br
+\usepackage[utf8]{inputenc}         % pacote para acentuação
+\usepackage{graphicx}         	    % pacote para importar figuras
+\usepackage[T1]{fontenc}            % pacote para conj. de caracteres correto
+\usepackage{times}                  % pacote para usar fonte Adobe Times
+\usepackage{enumerate}              % para lista de itens com letras
+\usepackage{breakcites}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{titletoc}               
+\usepackage{listings}			    % para listagens de código-fonte
+\usepackage{mathptmx}               % p/ usar fonte Adobe Times nas formulas matematicas
+\usepackage{url}                    % para formatar URLs
+%\usepackage{color}				    % para imagens e outras coisas coloridas
+%\usepackage{fixltx2e}              % para subscript
+%\usepackage{amsmath}               % para \epsilon e matemática
+%\usepackage{amsfonts}
+%\usepackage{setspace}			    % para mudar espaçamento dos parágrafos
+%\usepackage[table,xcdraw]{xcolor}  % para tabelas coloridas
+%\usepackage{longtable}             % para tabelas compridas (mais de uma página)
+%\usepackage{float}
+%\usepackage{booktabs}
+%\usepackage{tabularx}
+%\usepackage[breaklinks]{hyperref}
+
+\usepackage[alf,abnt-emphasize=bf]{abntex2cite}	% pacote para usar citações abnt
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Macros, ajustes e definições
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+
+% define estilo de parágrafo para citação longa direta:
+\newenvironment{citacao}{
+    %\singlespacing
+    %\footnotesize
+    \small
+    \begin{list}{}{
+        \setlength{\leftmargin}{4.0cm}
+        \setstretch{1}
+        \setlength{\topsep}{1.2cm}
+        \setlength{\listparindent}{\parindent}
+    }
+    \item[]}{\end{list}
+}
+
+% adiciona a fonte em figuras e tabelas
+\newcommand{\fonte}[1]{\\Fonte: {#1}}
+
+% Ative o seguinte caso alguma nota de rodapé fique muito longa e quebre entre múltiplas
+% páginas
+%\interfootnotelinepenalty=10000
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Informações gerais                                   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% título
+\title{%
+  Relatório Parcial - Trabalho Final de MLP \\
+  \large Tower Defense em C#}
+
+% autor
+\author{Martins}{Pedro} % {sobrenome}{nome}
+\author{Freitas}{Pietra} % {sobrenome}{nome} 1 para cada aluno
+\author{Minuzzo}{Thayná} % {sobrenome}{nome} 1 para cada aluno
+
+% Professor orientador da disciplina
+\advisor[Prof.~Dr.]{Mello Schnorr}{Lucas}
+
+% Nome do(s) curso(s):
+\course{Curso de Graduação em Ciência da Computa{\c{c}}{\~a}o e Engenharia de Computação}
+
+% local da realização do trabalho 
+\location{Porto Alegre}{RS} 
+
+% data da entrega do trabalho (mês e ano)
+\date{12}{2017}
+
+
+% Palavras chave
+\keyword{MLP}
+\keyword{TowerDefense}
+\keyword{C#}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Início do documento e elementos pré-textuais
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Declara início do documento
+\begin{document}
+
+% inclui folha de rosto 
+\maketitle      
+
+\selectlanguage{brazilian}
+
+% Sumario
+
+\tableofcontents
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Aqui comeca o texto propriamente dito
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%espaçamento entre parágrafos
+%\setlength{\parskip}{6 pt}
+
+\selectlanguage{brazilian}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Introdução
+%
+\chapter{Introdução} \label{intro}
+
+O objetivo deste trabalho consiste na exploração dos paradigmas orientado a objetos e funcional dado um problema e uma linguagem, escolhidos dentre os sugeridos pelo professor, a fim de comparar as características e funcionalidades de tal linguagem de programação em tais paradigmas.
+
+\section{Introdução ao problema}
+
+TODO: pra primeira entrega
+
+\section{Introdução à linguagem}
+
+TODO: pra primeira entrega
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Capítulo 2
+%
+\chapter{Visão Geral da Linguagem}
+
+\section{Apresentação da linguagem escolhida}
+
+\subsection{Características}
+
+\subsection{Fundamentos}
+
+\subsection{Benefícios}
+
+\subsection{Principais aplicações}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Capítulo 3
+%
+\chapter{Análise Crítica}
+
+\section{Tabela de critérios e propriedades}
+
+\section{Analisando os paradigmas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Conclusões
+%
+\chapter{CONCLUSÃO}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Referências 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\chapter{Referências}
+%\bibliographystyle{abnt}
+
+\bibliographystyle{abntex2-alf}
+
+
+\bibliography{biblio} % arquivo que contém as referências (no formato bib). Colocar as suas lá (se tiver dúvida sobre como adicionar novas referências, usar o software JabRef ou Medley)
+
+\end{document}
