@@ -1,0 +1,64 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {brazilian}
+\defcounter {refsection}{0}\relax 
+\select@language {brazilian}
+\defcounter {refsection}{0}\relax 
+\select@language {brazilian}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{1~Introdu\IeC {\c c}\IeC {\~a}o}{3}{CHAPTER.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Introdu\IeC {\c c}\IeC {\~a}o ao problema}{3}{section.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}Introdu\IeC {\c c}\IeC {\~a}o \IeC {\`a} linguagem}{3}{section.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}Introdu\IeC {\c c}\IeC {\~a}o ao \textit {framework} Monogame}{3}{section.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{2~Vis\IeC {\~a}o Geral da Linguagem}{4}{CHAPTER.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Apresenta\IeC {\c c}\IeC {\~a}o da linguagem escolhida}{4}{section.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{3~An\IeC {\'a}lise Cr\IeC {\'\i }tica}{5}{CHAPTER.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Crit\IeC {\'e}rios e Propriedades}{5}{section.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.1}Tabela de Crit\IeC {\'e}rios e Propriedades}{5}{subsection.3.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.2}Simplicidade}{5}{subsection.3.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.3}Ortogonalidade}{6}{subsection.3.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.4}Expressividade}{7}{subsection.3.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.5}Adequabilidade e variedade de estruturas de controle}{7}{subsection.3.1.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.6}Mecanismos de defini\IeC {\c c}\IeC {\~a}o de tipos}{8}{subsection.3.1.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.7}Suporte a abstra\IeC {\c c}\IeC {\~a}o de dados e de processos}{8}{subsection.3.1.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.8}Modelo de tipos}{10}{subsection.3.1.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.9}Portabilidade}{10}{subsection.3.1.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.10}Reusabilidade}{10}{subsection.3.1.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.11}Suporte e Documenta\IeC {\c c}\IeC {\~a}o}{11}{subsection.3.1.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.12}Tamanho de C\IeC {\'o}digo}{11}{subsection.3.1.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.13}Generalidade}{11}{subsection.3.1.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.14}Efici\IeC {\^e}ncia e Custo}{12}{subsection.3.1.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Analisando os paradigmas}{12}{section.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{4~Sobre o jogo}{13}{CHAPTER.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Acesso}{13}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Uso de Destrutores}{13}{section.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{5~CONCLUS\IeC {\~A}O}{14}{CHAPTER.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{6~Refer\IeC {\^e}ncias}{15}{CHAPTER.6}
+\contentsfinish 
