@@ -105,11 +105,12 @@ basicstyle=\ttfamily\small,
 % título
 \title{%
   Relatório Parcial - Trabalho Final de MLP \\
-  \large Tower Defense em C$^\sharp$}
+  \large Tower Defense em C\# - Fullbar}
 
 % autor
 \author{Freitas}{Pietra} % {sobrenome}{nome} 1 para cada aluno
 \author{Minuzzo}{Thayná} % {sobrenome}{nome} 1 para cada aluno
+
 
 % Professor orientador da disciplina
 \advisor[Prof.~Dr.]{Mello Schnorr}{Lucas}
@@ -127,7 +128,7 @@ basicstyle=\ttfamily\small,
 % Palavras chave
 \keyword{MLP}
 \keyword{TowerDefense}
-\keyword{C$^\sharp$}
+\keyword{C\#}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -170,11 +171,11 @@ Tem-se como problema base a ser abordado, a implementação de um jogo do tipo T
 
 \section{Introdução à linguagem}
 
-Para a abordagem do problema, foi escolhida a linguagem de programação C$^\sharp$, que possui múltiplos paradigmas de programação. Serão utilizados os paradigmas de orientação a objetos e funcional, presentes na referida linguagem, juntamente com \textit{frameworks} suportados por ela para auxílio da implementação do problema.
+Para a abordagem do problema, foi escolhida a linguagem de programação C\#, que possui múltiplos paradigmas de programação. Serão utilizados os paradigmas de orientação a objetos e funcional, presentes na referida linguagem, juntamente com \textit{frameworks} suportados por ela para auxílio da implementação do problema.
 
 \section{Introdução ao \textit{framework} Monogame}
 
-Para o desenvolvimento do trabalho, utilizamos o \textit{framework}, para desenvolvimento de jogos, Monogame - uma implementação \textit{open-source} do \textit{framework} XNA. Com ele, é possível desenvolver jogos em C$^\sharp$ com maior facilidade.
+Para o desenvolvimento do trabalho, utilizamos o \textit{framework}, para desenvolvimento de jogos, Monogame - uma implementação \textit{open-source} do \textit{framework} XNA. Com ele, é possível desenvolver jogos em C\# com maior facilidade.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Capítulo 2
@@ -183,11 +184,11 @@ Para o desenvolvimento do trabalho, utilizamos o \textit{framework}, para desenv
 
 \section{Apresentação da linguagem escolhida}
 
-A linguagem escolhida, C$^\sharp$, é uma linguagem influenciada por diversas outras linguagens, como C++ e JAVA. Contudo, durante sua criação, o objetivo consistia em unir os benefícios oferecidos por outras linguagens. É possível observar isso analisando, por exemplo, sua sintaxe, que é muito similar à sintaxe da linguagem C++ e, portanto, uma sintaxe simples e de fácil aprendizagem. 
+A linguagem escolhida, C\#, é uma linguagem influenciada por diversas outras linguagens, como C++ e JAVA. Contudo, durante sua criação, o objetivo consistia em unir os benefícios oferecidos por outras linguagens. É possível observar isso analisando, por exemplo, sua sintaxe, que é muito similar à sintaxe da linguagem C++ e, portanto, uma sintaxe simples e de fácil aprendizagem. 
 
 Além disso, é uma linguagem fortemente tipada e apresenta recursos significativos como tipos de valor nulo, enumerações, delegações, expressões lambdas, acesso direto à memória e suporte a métodos e tipos genéricos. Por ser uma linguagem orientada a objetos, é possível utilizar os recursos associados a esse paradigma, como encapsulamento, herança e polimorfismo. 
 
-Nesse sentido, uma de suas aplicações está no \textit{framework} .NET, em que foi utilizada na maioria das classes. Também possui grande aplicação na engine de games Unity. O trabalho desenvolvido no paradigma OO utiliza o \textit{framework} \textit{Monogame}, portanto, mais uma aplicação de C$^\sharp$.
+Nesse sentido, uma de suas aplicações está no \textit{framework} .NET, em que foi utilizada na maioria das classes. Também possui grande aplicação na engine de games Unity. O trabalho desenvolvido no paradigma OO utiliza o \textit{framework} \textit{Monogame}, portanto, mais uma aplicação de C\#.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Capítulo 3
@@ -218,9 +219,9 @@ Nesse sentido, uma de suas aplicações está no \textit{framework} .NET, em que
 
 \subsection{Simplicidade}
 
-A linguagem adotada tem um bom potencial quando o quesito avaliado é 	a simplicidade de código, pois é possível fazer uso de 	representações precisas, sem ambiguidades. Isso está relacionado também com o fator de ortogonalidade, que é pouco presente, mas que quando se encontra com frequência em uma determinada linguagem pode gerar tais ambiguidades. De fato, C$^\sharp$ se caracteriza como uma linguagem que possui poucas exceções às regras de construção sintática. Semanticamente, foi implementada uma classe de constantes, o que torna o código simples de entender independentemente do contexto em que ele se encontra.
+A linguagem adotada tem um bom potencial quando o quesito avaliado é 	a simplicidade de código, pois é possível fazer uso de 	representações precisas, sem ambiguidades. Isso está relacionado também com o fator de ortogonalidade, que é pouco presente, mas que quando se encontra com frequência em uma determinada linguagem pode gerar tais ambiguidades. De fato, C\# se caracteriza como uma linguagem que possui poucas exceções às regras de construção sintática. Semanticamente, foi implementada uma classe de constantes, o que torna o código simples de entender independentemente do contexto em que ele se encontra.
 
-\begin{lstlisting}[caption=Trecho de código C$^\sharp$ retirado da implementação deste trabalho, label=lst:test]
+\begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
 
 class Constants
 {
@@ -235,7 +236,7 @@ static public float ENEMY_SPEED = 1f;
 
 \end{lstlisting}
 
-\begin{lstlisting}[caption=Trecho de código C$^\sharp$ retirado da implementação deste trabalho, label=lst:test]
+\begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
 
 protected void LoadEnemies()
 {
@@ -259,7 +260,7 @@ Existem divergências acerca da questão ortogonalidade para a linguagem escolhi
 
 A linguagem possui diversas instruções que tornam mais expressivas a escrita dos comandos, através da definição de operadores que abrangem uma grande quantidade de computação.Temos como exemplo os operadores ++ ou - - , que substituem o uso de x = x + 1, por exemplo, garantindo a expressividade. O uso de estruturas de controle que permitem uma fácil expressão do que se quer representar, como o foreach, também são considerados pontos positivos em relação à expressividade do código. Seguem abaixo exemplos de ambas implementações.
 
-\begin{lstlisting}[caption=Trecho de código C$^\sharp$ retirado da implementação deste trabalho, label=lst:test]
+\begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
 
  protected void UpdateEnemies(GameTime gameTime)
         {
@@ -282,7 +283,7 @@ for (int i = 0; i < enemies.Count; i++)
 
 A linguagem escolhida se mostra bastante completa quando o quesito é estruturas de controle. Durante a codificação, exploramos isso através de sub-rotinas, estruturas sequenciais, estruturas de seleção e estruturas de repetição, conforme a necessidade e demanda do domínio do problema. Segue um exemplo do uso de sub-rotinas.
 
-\begin{lstlisting}[caption=Trecho de código C$^\sharp$ retirado da implementação deste trabalho, label=lst:test]
+\begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
 protected override void Update(GameTime gameTime)
       	  {
            	 spawn += (float)gameTime.ElapsedGameTime.TotalSeconds;
@@ -300,13 +301,13 @@ protected override void Update(GameTime gameTime)
 
 \subsection{Mecanismos de definição de tipos}
 
-Por utilizar o paradigma OO, C$^\sharp$ tem a possibilidade da criação de classes. Além disso, é possível criar structs. Portanto, é uma linguagem que conta com mecanismos de definição de tipo.
+Por utilizar o paradigma OO, C\# tem a possibilidade da criação de classes. Além disso, é possível criar structs. Portanto, é uma linguagem que conta com mecanismos de definição de tipo.
 
 \subsection{Suporte a abstração de dados e de processos}
 
 Por se tratar de uma linguagem orientada a objetos, ela oferece mecanismos básicos para tal, como herança, encapsulamento, e polimorfismo. A respeito da abstração de processos, observa-se que seu uso se torna algo quase essencial através de subprogramas, para modularização e legibilidade do código como um todo. Ambos os tipos de abstração estão bastante presentes no software desenvolvido, que apresenta onze classes distintas com níveis de herança entre si, todas elas encapsuladas (têm em sua estrutura métodos setters e getters, e seus atributos são protegidos). Os subprogramas existem tanto como métodos de classes, quanto como funções que auxiliam na classe principal. Segue um exemplo que demonstra uma das classes com seu devido encapsulamento, tendo seus atributos protegidos, sendo acessíveis apenas por métodos setters e getters.
 
-\begin{lstlisting}[caption=Trecho de código C$^\sharp$ retirado da implementação deste trabalho, label=lst:test]
+\begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
 
 namespace MonoGame2D
 {
@@ -324,7 +325,7 @@ namespace MonoGame2D
 
 \end{lstlisting}
 
-\begin{lstlisting}[caption=Trecho de código C$^\sharp$ retirado da implementação deste trabalho, label=lst:test]
+\begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
 
 /* Getters */
         public int GetCost()
@@ -356,7 +357,7 @@ A linguagem escolhida é fortemente tipada, portanto há checagem de tipo. Contu
 
 \subsection{Portabilidade}
 
-Tanto a linguagem quanto o \textit{framework} utilizado, Monogame, podem ser considerados altamente portáveis através de ferramentas específicas. Para portar C$^\sharp$ de forma genérica, usa-se uma implementação do \textit{framework} .NET chamado Mono, que permite desenvolver até mesmo para dispositivos móveis. A respeito do Monogame, a documentação presente o descreve como \textit{plataform-agnostic}. Nossa implementação foi desenvolvida especificamente para o sistema operacional Windows. Mas, através de alguns ajustes, poderia ser utilizada em outras plataformas.
+Tanto a linguagem quanto o \textit{framework} utilizado, Monogame, podem ser considerados altamente portáveis através de ferramentas específicas. Para portar C\# de forma genérica, usa-se uma implementação do \textit{framework} .NET chamado Mono, que permite desenvolver até mesmo para dispositivos móveis. A respeito do Monogame, a documentação presente o descreve como \textit{plataform-agnostic}. Nossa implementação foi desenvolvida especificamente para o sistema operacional Windows. Mas, através de alguns ajustes, poderia ser utilizada em outras plataformas.
 
 \subsection{Reusabilidade}
 
@@ -368,13 +369,13 @@ Tanto a linguagem quanto o \textit{framework} utilizado, Monogame, podem ser con
 
 \subsection{Tamanho de Código}
 
-Por ser bastante reutilizável, é possível implementar lógicas com certa complexidade, em C$^\sharp$, com poucas linhas de código. 
+Por ser bastante reutilizável, é possível implementar lógicas com certa complexidade, em C\#, com poucas linhas de código. 
 
 \subsection{Generalidade}
 
-C$^\sharp$ apresenta mecanismos para a definição de estruturas de dados genéricas, portanto é uma linguagem genérica.
+C\# apresenta mecanismos para a definição de estruturas de dados genéricas, portanto é uma linguagem genérica.
 
-\begin{lstlisting}[caption=Trecho de código C$^\sharp$ retirado de documentação online da linguagem, label=lst:test]
+\begin{lstlisting}[caption=Trecho de código C\# retirado de documentação online da linguagem, label=lst:test]
 
 public class Stack<T>
 {
@@ -440,7 +441,7 @@ Para a implementação do código, não foram usados destrutores de classe. Isso
 
 Durante o desenvolvimento do trabalho, uma das grandes vantagens da linguagem escolhida foi sua semelhança, sintaticamente, com a linguagem C++ e, portanto, com a linguagem C, linguagens com as quais as integrantes já estavam familiarizadas.
 
-Além disso, C$^\sharp$ é uma linguagem com paradigma OO. Portanto, a estruturação do código utilizando os recursos desse paradigma aconteceu naturalmente à medida em que o código era incrementado.
+Além disso, C\# é uma linguagem com paradigma OO. Portanto, a estruturação do código utilizando os recursos desse paradigma aconteceu naturalmente à medida em que o código era incrementado.
 
 Em relação à linguagem, não houve grandes dificuldades. O maior desafio consistiu na utilização do \textit{framework} Monogame. Entretanto, por efeito da utilização desse \textit{framework}, os laços e atualizações necessárias para o fluxo do jogo tornaram-se significativamente mais fáceis de serem desenvolvidos.
 
@@ -451,11 +452,11 @@ Em relação à linguagem, não houve grandes dificuldades. O maior desafio cons
 \chapter{Referências}
 %\bibliographystyle{abnt}
 
-\href{https://www.devmedia.com.br/introducao-a-linguagem-c/27711}{Devmedia - Introdução à linguagem C$^\sharp$}
+\href{https://www.devmedia.com.br/introducao-a-linguagem-c/27711}{Devmedia - Introdução à linguagem C\#}
 
 \href{https://pt.wikipedia.org/wiki/Microsoft_XNA}{PT Wikipedia - Microsoft XNA}
 
-\href{https://www.caelum.com.br/apostila-csharp-orientacao-objetos/o-que-e-c-e-net/#2-1-um-pouco-sobre-a-historia-do-c-e-net}{Caelum - O que é C$^\sharp$ e .NET}
+\href{https://www.caelum.com.br/apostila-csharp-orientacao-objetos/o-que-e-c-e-net/#2-1-um-pouco-sobre-a-historia-do-c-e-net}{Caelum - O que é C\# e .NET}
 
 \href{https://www.youtube.com/playlist?list=PLV27bZtgVIJqoeHrQq6Mt_S1-Fvq_zzGZ}{Oyyou - Monogame Tutorials}
 
@@ -463,9 +464,9 @@ Em relação à linguagem, não houve grandes dificuldades. O maior desafio cons
 
 \href{http://rbwhitaker.wikidot.com/monogame-tutorials}{Rikidot - Monogame Tutorials}
 
-\href{https://docs.microsoft.com/pt-br/dotnet/csharp/programming-guide/}{Microsoft - C$^\sharp$ / Programming Guide}
+\href{https://docs.microsoft.com/pt-br/dotnet/csharp/programming-guide/}{Microsoft - C\# / Programming Guide}
 
-\href{https://docs.microsoft.com/en-us/dotnet/csharp/}{Microsoft - C$^\sharp$ / Documentation}
+\href{https://docs.microsoft.com/en-us/dotnet/csharp/}{Microsoft - C\# / Documentation}
 
 \href{https://sophia.javeriana.edu.co/~cbustaca/docencia/POO-2016-01/documentos/Object%20Oriented%20Software%20Construction-Meyer.pdf}{Sophia Javeriana - Object Oriented Software Construction - Meyer}
 
