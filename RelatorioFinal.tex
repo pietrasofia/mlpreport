@@ -167,7 +167,7 @@ O objetivo deste trabalho consiste na exploração dos paradigmas orientado a ob
 
 \section{Introdução ao problema}
 
-Tem-se como problema base a ser abordado, a implementação de um jogo do tipo Tower Defense através dos conhecimentos sobre paradigmas obtidos ao longo do semestre. A ideia básica é executar a defesa de algum elemento presente na tela, fazendo uso de recursos contidos no jogo, que auxiliem nesse trabalho.  
+Tem-se como problema base a ser abordado a implementação de um jogo do tipo Tower Defense através dos conhecimentos sobre paradigmas obtidos ao longo do semestre. A ideia básica é executar a defesa de algum elemento presente na tela, fazendo uso de recursos contidos no jogo, que auxiliem nesse trabalho.  
 
 \section{Introdução à linguagem}
 
@@ -269,12 +269,19 @@ A linguagem possui diversas instruções que tornam mais expressivas a escrita d
 
         }
 
-for (int i = 0; i < enemies.Count; i++)
+\end{lstlisting}
+
+\begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
+
+
+			for (int i = 0; i < enemies.Count; i++)
             {
                 if (enemies[i].GetOutOfScreen()) // Removes enemies out of screen
                 {
                     enemies.RemoveAt(i);
                     i--;
+								}
+						}
 	     ...
 
 \end{lstlisting}
@@ -301,11 +308,12 @@ protected override void Update(GameTime gameTime)
 
 \subsection{Mecanismos de definição de tipos}
 
-Por utilizar o paradigma OO, C\# tem a possibilidade da criação de classes. Além disso, é possível criar structs. Portanto, é uma linguagem que conta com mecanismos de definição de tipo.
+Por utilizar o paradigma OO, C\# tem a possibilidade da criação de classes. Além disso, é possível criar \textit{structs}. Portanto, é uma linguagem que conta com mecanismos de definição de tipo.
 
 \subsection{Suporte a abstração de dados e de processos}
 
-Por se tratar de uma linguagem orientada a objetos, ela oferece mecanismos básicos para tal, como herança, encapsulamento, e polimorfismo. A respeito da abstração de processos, observa-se que seu uso se torna algo quase essencial através de subprogramas, para modularização e legibilidade do código como um todo. Ambos os tipos de abstração estão bastante presentes no software desenvolvido, que apresenta onze classes distintas com níveis de herança entre si, todas elas encapsuladas (têm em sua estrutura métodos setters e getters, e seus atributos são protegidos). Os subprogramas existem tanto como métodos de classes, quanto como funções que auxiliam na classe principal. Segue um exemplo que demonstra uma das classes com seu devido encapsulamento, tendo seus atributos protegidos, sendo acessíveis apenas por métodos setters e getters.
+Por se tratar de uma linguagem orientada a objetos, ela oferece mecanismos básicos para tal, como herança, encapsulamento, e polimorfismo. A respeito da abstração de processos, observa-se que seu uso se torna algo quase essencial através de subprogramas, para modularização e legibilidade do código como um todo. Ambos os tipos de abstração estão bastante presentes no \textit{software} desenvolvido, que apresenta onze classes distintas com níveis de herança entre si, todas elas encapsuladas (têm em sua estrutura métodos \textit{getters} e textit{setters}, e seus atributos são protegidos). Os subprogramas existem tanto como métodos de classes, quanto como funções que auxiliam na classe principal. Segue um exemplo que demonstra uma das classes com seu devido encapsulamento, tendo seus atributos protegidos, sendo acessíveis apenas por métodos \textit{getters} e textit{setters}.
+
 
 \begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
 
@@ -315,19 +323,16 @@ namespace MonoGame2D
 	{
 		/* Attributes */
         protected float bulletTimer; // How long ago was a bullet fire
-		protected List<Bullet> bulletList = new List<Bullet>();
+				protected List<Bullet> bulletList = new List<Bullet>();
         protected Enemy target;
 
         protected int cost; // How much will the tower cost to make
         protected int damage; // The damage done to enemy's
         protected float radius; // How far the tower can shoot
-		protected int bulletSpeed;
-
-\end{lstlisting}
-
-\begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
-
-/* Getters */
+				protected int bulletSpeed;
+				...
+				
+				/* Getters */
         public int GetCost()
 		{
             return cost;
@@ -348,6 +353,15 @@ namespace MonoGame2D
 		{
             this.cost = cost;
         }
+	}
+	
+	...
+				
+		}
+		
+		...
+		
+}
 
 \end{lstlisting}
 
@@ -373,9 +387,9 @@ Por ser bastante reutilizável, é possível implementar lógicas com certa comp
 
 \subsection{Generalidade}
 
-C\# apresenta mecanismos para a definição de estruturas de dados genéricas, portanto é uma linguagem genérica.
+C\# apresenta mecanismos para a definição de estruturas de dados genéricas, portanto é uma linguagem genérica. Além disso, também apresenta classes genéricas já disponíveis, como a classe \textit{List}. No trecho de código a seguir, é apresentada a implementação de uma pilha genérica.
 
-\begin{lstlisting}[caption=Trecho de código C\# retirado de documentação online da linguagem, label=lst:test]
+\begin{lstlisting}[caption=Trecho de código C\# retirado de documentação \textit{online} da linguagem, label=lst:test]
 
 public class Stack<T>
 {
@@ -417,33 +431,530 @@ public class Stack<T>
 
 A eficiência da linguagem está fortemente relacionada com a implementação da linguagem, que no nosso caso, se apresenta como híbrida, pois apesar de criar um arquivo com extensão executável, existe a necessidade de uma Maquina Virtual .NET para sua interpretação. Ganha-se assim em portabilidade também, pois o código pode ser exportado para plataformas que possuam a VM instalada. Porém, perde-se em performance para a execução. A linguagem possui um alto nível de abstração, logo o custo associado a treinamentos e desenvolvimento torna-se bastante baixo.
 
-\section{Analisando os paradigmas}
-
---
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Capítulo 4
 %
-\chapter{Sobre o jogo}
+\chapter{Requisitos}
 
-\section{Acesso}
+O código encontra-se disponível no GitHub, no repositório: \href{https://github.com/TMinuzzo/TowerDefenseGame/}{TowerDefenseGame}. Na \textit{branch develop}, encontra-se a implementação no paradigma OO e, na \textit{branch functional}, encontra-se a implementação no paradigma funcional. A \textit{branch master} está alinhada à \textit{branch functional}, porém contém apenas as classes. Junto a este relatório, também constam as implementações em cada um dos paradigmas.
 
-O código encontra-se disponível no GitHub, no repositório: \href{https://github.com/TMinuzzo/TowerDefenseGame/}{TowerDefenseGame}.
+Na primeira etapa, foi desenvolvida a implementação no paradigma OO. E, na segunda etapa, a implementação no paradigma funcional.
 
-\section{Uso de Destrutores}
+Nas seções seguintes, estão exemplificados, com trechos de código, os requisitos implementados na implementação utilizando cada um dos paradigmas. 
 
-Para a implementação do código, não foram usados destrutores de classe. Isso se deve parcialmente ao fato da existência de um método próprio do framework Monogame chamada UnloadContent(), que tem como objetivo descarregar todo o conteúdo previamente carregado quando ele deixa de ser usado, ou quando existe a invocação do método em questão. 
+\section{Paradigma OO}
+
+\subsection{Classes}
+
+Para o devido funcionamento do jogo, foram utilizadas 11 classes distintas, sendo uma delas exclusivamente para fácil acesso e modificação de constantes necessárias, e outra caracterizada como a classe principal, que instancia todas as demais e contém o loop principal do jogo. As outras classes se apresentam em níveis de hierarquia distintos, e encapsulam devidamente os atributos, assim como os usam em métodos da lógica do jogo. Seguem dois trechos de código demonstrando a classe \textit{ArrowTower}, e a classe de constantes anteriormente referida.
+
+\begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
+
+public class ArrowTower : Tower
+	{
+		...
+		
+		/* Constructor */
+        public ArrowTower(Texture2D texture, Texture2D bulletTexture, Vector2 position)
+            : base(texture, bulletTexture, position)
+        {
+            this.cost = Constants.ARROW_TOWER_COST;
+            this.damage = Constants.ARROW_TOWER_DAMAGE;
+            this.radius = Constants.ARROW_TOWER_RADIUS;
+						this.cost = Constants.ARROW_TOWER_COST;
+						this.bulletSpeed = Constants.ARROW_TOWER_BULLET_SPEED;
+						
+						...
+        }
+	}
+\end{lstlisting}
+
+\begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
+
+class Constants
+	{
+			...
+			
+			/* ABOUT THE GAME */
+			static public int MAX_ENEMIES = 7;
+			static public int ENEMY_SPAWN_TIME = 5;
+
+			/* ABOUT THE ENEMIES */
+			static public int ENEMY_START_HEALTH = 100;
+			static public float ENEMY_SPEED = 2f;
+
+			/* ABOUT THE MAP */
+			static public int MAP_TILE_SIZE = 64;
+
+			/* ABOUT THE PLAYER */
+			static public int PLAYER_START_GOLD = 50;
+			static public int PLAYER_START_LIFES = 3;
+
+			/* ABOUT THE ARROW TOWER TOWER */
+			static public int ARROW_TOWER_DAMAGE = 50;
+			static public int ARROW_TOWER_RADIUS = 150;
+			static public int ARROW_TOWER_COST = 0;
+			static public int ARROW_TOWER_BULLET_SPEED = 5;
+			
+			...
+			
+	}
+
+\end{lstlisting}
+
+\subsection{Encapsulamento e Proteção}
+
+Todas as classes apresentam atributos privados ou protegidos (de acordo com a necessidade de uso através das heranças) e tais atributos apenas podem ser acessados através de métodos públicos.
+
+\begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
+
+ public class Bullet : Sprite
+{
+		/* Attributes */
+    protected int damage;
+    protected int age;
+    protected int speed;
+
+		/* Getters */
+		public int GetDamage()
+		{
+			return damage;
+		}
+
+		public int GetAge()
+		{
+			return age;
+		}
+
+		public int GetSpeed()
+		{
+			return speed;
+		}
+
+		/* Setters */
+		public void SetDamage(int damage)
+		{
+			this.damage = damage;
+		}
+
+		public void SetAge(int age)
+		{
+			this.age = age;
+		}
+
+		public void SetSpeed(int speed)
+		{
+			this.speed = speed;
+		}
+		
+		...
+}
+
+\end{lstlisting}
+
+\subsection{Destrutores}
+
+Para a implementação do código, não foram usados destrutores de classe. Isso se deve parcialmente ao fato da existência de um método próprio do \textit{framework Monogame} chamada \textit{UnloadContent()}, que tem como objetivo descarregar todo o conteúdo previamente carregado quando ele deixa de ser usado, ou quando existe a invocação do método em questão. 
+
+\subsection{Espaços de nomes}
+
+No \textit{Tower Defense} desenvolvido estão contidos dois espaços de nomes distintos, sendo um deles para as classes que implementam a lógica e organização das estruturas do jogo como um todo, chamada MonoGame2D, e outra que envolve duas classes usadas para configurações do jogo, \textit{Button} e \textit{Constants}, sob o \textit{namespace} de \textit{Configurations}. Abaixo um exemplo de classe sob o \textit{namespace MonoGame2D} e outro sob o \textit{Configurations}. Ao acessar tais classes de um espaço de nomes diferente, é preciso especificar o correspondente.
+
+\begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
+
+namespace MonoGame2D
+{
+    abstract public class Tower : Sprite
+	{
+        /* Attributes */
+        protected float bulletTimer; // How long ago was a bullet fire
+        protected ImmutableList<Bullet> bulletList = ImmutableList.Create<Bullet>();
+        protected Enemy target;
+				...
+	}
+	
+}
+
+\end{lstlisting}
+
+\begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
+
+namespace Configurations
+{
+	class Constants
+	{
+		/* ABOUT THE GAME */
+		static public int MAX_ENEMIES = 7;
+		static public int ENEMY_SPAWN_TIME = 5;
+		...
+	}
+}
+
+\end{lstlisting}
+
+\subsection{Herança}
+
+Sobre a relação de herança das classes presentes, existe uma classe chamada \textit{Sprite} que é a mais abstrata, utilizada por todos os elementos que apresentam algum tipo de movimento no jogo, e precisam dos atributos de Posição, Velocidade e Rotação, além do atributo padrão Textura, que aplica a imagem correspondente ao elemento. Essa classe tem dois níveis de herança abaixo de si, sendo eles a classe \textit{Tower}, que controla genericamente as torres do jogo, e como filha desta a classe \textit{ArrowTower}, que é uma especialização de torre com características próprias. Dessa forma, é possível futuramente adaptar o jogo para a criação de diversos tipos de torres mais facilmente, herdando os atributos de \textit{Tower}. Segue abaixo um diagrama de classes ilustrando as hierarquias citadas, e trechos de código indicando os três níveis de herança.
+
+\begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
+
+abstract public class Tower : Sprite
+	{
+		/* Attributes */
+        protected float bulletTimer; // How long ago was a bullet fire
+		protected List<Bullet> bulletList = new List<Bullet>();
+        protected Enemy target;
+
+	}
+	
+\end{lstlisting}
+	
+\begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
+
+public class ArrowTower : Tower
+	{
+		/* Constructor */
+        public ArrowTower(Texture2D texture, Texture2D bulletTexture, Vector2 position)
+            : base(texture, bulletTexture, position)
+        {
+            this.cost = Constants.ARROW_TOWER_COST;
+            this.damage = Constants.ARROW_TOWER_DAMAGE;
+            this.radius = Constants.ARROW_TOWER_RADIUS;
+			this.cost = Constants.ARROW_TOWER_COST;
+			this.bulletSpeed = Constants.ARROW_TOWER_BULLET_SPEED;
+        }
+		}
+
+
+\end{lstlisting}
+
+\subsection{Polimorfismo por Inclusão}
+
+Esse tipo de polimorfismo é usado exaustivamente, pois está muito presente no próprio \textit{framework} utilizado para desenvolvimento. Grande parte das classes implementadas para o trabalho são herdeiras da classe \textit{Sprite}, que contém métodos como \textit{Update()} e \textit{Draw()}. Contudo, tais classes herdeiras também implementam suas próprias funções \textit{Update()} e \textit{Draw()} como apresentado nos trechos a seguir.
+
+\begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
+
+namespace MonoGame2D
+{
+    public class Sprite
+    {
+				...
+
+		 public virtual void Update(GameTime gameTime)
+        {
+            this.center = new Vector2(position.X + texture.Width / 2,
+                position.Y + texture.Height / 2);
+        }
+
+				...
+
+        public virtual void Draw(SpriteBatch spriteBatch, Color color)
+        {
+            spriteBatch.Draw(texture, center, null, color, rotation, origin, 1.0f, 					SpriteEffects.None, 0);
+        }
+    }
+}
+
+\end{lstlisting}
+
+\begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
+
+namespace MonoGame2D
+{
+    public class Enemy : Sprite
+    {
+		
+			...
+			
+			    public override void Update(GameTime gameTime)
+        {
+            base.Update(gameTime);
+
+            Vector2 position = GetPosition();
+            if (waypoints.Count > 0)
+			{
+				if (DistanceToDestination < 1f)
+				{
+					position = waypoints.Peek();
+					waypoints.Dequeue();
+                    SetPosition(position);
+				}
+
+				else
+				{
+					Vector2 direction = waypoints.Peek() - position;
+					direction.Normalize();
+
+					velocity = Vector2.Multiply(direction, speed);
+
+					position += velocity;
+                    SetPosition(position);
+				}
+			}
+			else
+			{
+				outOfScreen = true;
+				alive = false;
+			}
+
+			if (currentHealth <= 0)
+			{
+				alive = false;
+			}
+                
+        }
+
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            if (alive)
+            {
+                float healthPercentage = (float)currentHealth / (float)startHealth;              
+
+                base.Draw(spriteBatch, Color.White);
+            }      
+        }
+	}
+}
+
+\end{lstlisting}
+
+\subsection{Polimorfismo Paramétrico}
+
+A linguagem disponibiliza uma biblioteca de classes genéricas já implementadas, como a classe \textit{List}, a qual utilizamos de forma exaustiva na implementação OO. Além disso, através dessa biblioteca, também é possível de definir novos tipos genéricos, em que foi definido o tipo \textint{GenericList}.
+
+\begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
+
+	public class GenericList<T>
+	{
+		T[] obj = new T[Constants.ENEMIES_TEXTURES];
+		int count = 0;
+
+		// Adding items mechanism into generic type
+		public void Add(T item)
+		{
+			// Checking length
+			if (count + 1 < Constants.ENEMIES_TEXTURES)
+			{
+				obj[count] = item;
+			}
+			count++;
+		}
+
+		public int getSize()
+		{
+			return count;
+		}
+
+		public T getOnIndex(int index)
+		{
+			return obj[index];
+		}
+
+		public void setOnIndex(int index, T item)
+		{
+			obj[index] = item;
+		}
+
+	}
+
+\end{lstlisting}
+
+\begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
+
+	public class Game1 : Game
+    {
+        GraphicsDeviceManager graphics;
+        SpriteBatch spriteBatch;
+        Random random = new Random();
+        Map map = new Map();
+
+        List<Enemy> enemies = new List<Enemy>();
+
+				GenericList<Texture2D> enemyTextures = new GenericList<Texture2D>();
+				...
+		}
+		
+		\end{lstlisting}
+
+\subsection{Polimorfismo por Sobrecarga}
+
+Utilizaram-se construtores alternativos durante a codificação do programa, onde um dos construtores recebe parâmetros e seta atributos. Além de polimorfismo por inclusão, citado anteriormente, o método \textit{Draw()} da classe \textit{Sprite} também implementa sofre polimorfismo por sobrecarga, como apresentado nos exemplos abaixo. Dessa forma, é possível escolher qual dos métodos \textit{Draw()} será chamado através dos parâmetros passados.
+
+\begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
+
+namespace MonoGame2D
+{
+    public class Sprite
+    {
+			...
+			
+		public virtual void Draw(SpriteBatch spriteBatch)
+        {
+            spriteBatch.Draw(texture, center, null, Color.White,
+                rotation, origin, 1.0f, SpriteEffects.None, 0);
+        }
+
+        public virtual void Draw(SpriteBatch spriteBatch, Color color)
+        {
+            spriteBatch.Draw(texture, center, null, color, rotation, origin, 1.0f, SpriteEffects.None, 0);
+        }
+    }
+}
+
+\end{lstlisting}
+
+\subsection{\textit{Delegates}}
+
+Seu uso foi combinado com a solução encontrada para implementação de expressões \textit{Lambda}, e o trecho de código correspondente se encontra na seção dos requisitos funcionais \textit{Lambda}.
+
+\section{Paradigma funcional}
+
+\subsection{Elementos Imutáveis e Funções Puras}
+
+As listas principais do jogo são elementos imutáveis. Isto é, lista de torres criadas pelo jogadores, lista de inimigos vivos, lista de texturas de inimigos e listas de balas em curso lançadas por cada uma das torres. Para isso, foi utilizada a classe \textit{ImmutableList} oferecida por uma das bibliotecas da linguagem. Dessa forma, sempre que uma lista é modificada, deve-se criar uma nova lista a partir da anterior.
+
+\begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
+
+ImmutableList<Enemy> enemies = ImmutableList.Create<Enemy>();
+
+ImmutableList<Texture2D> enemyTextures = ImmutableList.Create<Texture2D>();
+
+\end{lstlisting}
+
+\begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
+
+public void ClearTowers()
+{
+		towers = towers.Clear();
+}
+
+\end{lstlisting}
+
+Em relação às funções puras, definiu-se a função \textit{multiplyingByTileSize}, responsável por multiplicar um vetor por uma constante. Essa função é independente de I/O, estado do programa ou qualquer efeito colateral, ela sempre realizará o mesmo cálculo de acordo com sua entrada.
+
+\begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
+
+public Vector2 multiplyingByTileSize(Vector2 vector)
+{
+		Vector2 multiplied = vector * Constants.MAP_TILE_SIZE;
+
+		return multiplied;
+}
+
+\end{lstlisting}
+
+\subsection{Funções \textit{Lambda}}
+
+	Foram usadas funções \textit{Lambda} como um método de facilitar mensagens passadas, e para isso foram combinados \textit{delegates} com seus devidos parâmetros compatíveis. A seguir estão os trechos de código contendo a declaração do \textit{delegate} em questão, e seu uso combinado com as funções \textit{lambda} de instrução, que recebem as mensagens diretamente da classe \textit{Constants}.
+		
+\begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
+	
+public class Toolbar
+    {
+				...
+		
+        // A delegate to be used with the Lambda Functions
+        delegate void OnPassValue(string s);
+				
+				...
+        OnPassValue passValueLives = (x) => { textLives = string.Format(x, player.GetLives()); };
+        OnPassValue passValueGold = (x) => { textGold = string.Format(x, player.GetGold()); };
+
+        passValueLives(Constants.toolBarMessageLives); //Lambda expression with delegate
+        passValueGold(Constants.toolBarMessageGold);   //Lambda expression with delegate
+        spriteBatch.DrawString(font, textLives, textPositionLives, Color.SaddleBrown);
+        spriteBatch.DrawString(font, textGold, textPositionGold, Color.SaddleBrown);
+    }
+
+
+\end{lstlisting}
+
+\subsection{\textit{Pattern Matching}}
+
+A correspondência de tipos foi usada justamente para realizar a checagem de um tipo de dados passado como parâmetro para uma função, através do operando is presente na linguagem C\#. É realizada a comparação do objeto passado, e se ele passa pela verificação, é feito um cast para o objeto desejado, para então utilizar um método daquele objeto de classe. Caso a verificação não tenha um valor de sucesso verdadeiro, o retorno da função é nulo. Segue o exemplo do uso de\textit{Pattern Matching}.
+
+\begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
+
+ public static Enemy setPath(object functionValue, Map map)
+        {
+            Enemy enemy = null;
+            if (functionValue is Enemy)
+            {
+                enemy = (Enemy)functionValue;
+                enemy.SetWaypoints(map.GetWaypoints());               
+            }
+            return enemy;
+        }
+
+
+\end{lstlisting}
+
+\subsection{Funções de Ordem Superior}
+
+Não implementado.
+
+\subsection{Funções de Ordem Superior Prontas}
+
+Utilizou-se a função já implementada \textit{Where}, que recebe uma função como parâmetro e retorna um objeto contendo os elementos da lista de entrada que satisfazem a condição de tal função. Transforma-se essa objeto em uma lista novamente utilizando o método \textit{toList()}.
+
+\begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
+
+List<Tower> filteredList = towers.Where(tower => tower.GetPosition() == new Vector2(tileX, tileY)).ToList();
+			
+\end{lstlisting}
+
+\subsection{Funções Como Elementos de Primeira Ordem}
+
+Uma função com elementos de primeira ordem simplesmente representa a possibilidade de associar uma função à uma variável, e passar essa última como parâmetro, invocando-a. Nesse caso, ela está presente no código tanto no uso das funções \textit{Lambda} da classe \textit{Toolbar}, quanto no uso de \textit{currying}, que utiliza funções anônimas, presente na classe principal \textit{Game1}. Para evitar redundâncias, os códigos exemplificando o requisito de funções com elementos de primeira ordem está presente na seção Funções \textit{Lambda} e Funções que utilizam \textit{currying}.
+
+\subsection{Recursão}
+
+Não implementado.
+
+\subsection{\textit{Currying}}
+
+Foi usado currying para realizar operações matemáticas de subtração consecutivas dentro do código, onde o parâmetro passado representa o valor que receberá a modificação, e o retorno é o valor inicial com as devidas operações já realizadas sobre ele.
+
+\begin{lstlisting}[caption=Trecho de código C\# retirado da implementação deste trabalho, label=lst:test]
+
+ internal static int DecrementCurrying(int i)
+        {
+            // int -> (int -> int) 
+            Func<int, Func<int, int>> higherOrderSubtract = a => new Func<int, int>(b => b - a);
+            Func<int, int> dec = higherOrderSubtract(1); // Equivalent to: b => b - a.
+            int curriedResult = dec(i);
+
+            return curriedResult;
+        }
+
+
+\end{lstlisting}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Conclusões
 %
 \chapter{CONCLUSÃO}
 
-Durante o desenvolvimento do trabalho, uma das grandes vantagens da linguagem escolhida foi sua semelhança, sintaticamente, com a linguagem C++ e, portanto, com a linguagem C, linguagens com as quais as integrantes já estavam familiarizadas.
+\section{Analisando os paradigmas}
 
-Além disso, C\# é uma linguagem com paradigma OO. Portanto, a estruturação do código utilizando os recursos desse paradigma aconteceu naturalmente à medida em que o código era incrementado.
+Durante o desenvolvimento do trabalho utilizando OO, a inserção dos elementos relacionados a esse paradigma ocorreu naturalmente. Isto é, utilizamos os recursos da linguagem de forma intuitiva e não foram necessários muitos ajustes para adequar o programa aos requisitos solicitados. 
 
-Em relação à linguagem, não houve grandes dificuldades. O maior desafio consistiu na utilização do \textit{framework} Monogame. Entretanto, por efeito da utilização desse \textit{framework}, os laços e atualizações necessárias para o fluxo do jogo tornaram-se significativamente mais fáceis de serem desenvolvidos.
+Já no desenvolvimento funcional, muitos dos requisitos solicitados para esse paradigma foram forçados. Ou seja, houve a necessidade de explorarmos recursos menos utilizados da linguagem a fim de adequar o programa aos requisitos. O raciocínio funcional não era intuitivo para o desenvolvimento.
+
+Nesse sentido, acreditamos que a facilidade em OO e dificuldade em funcional ocorreram, principalmente, porque C\# é naturalmente uma linguagem Orientada a Objetos, mas também pois o paradigma funcional não é o paradigma ao qual as desenvolvedoras costumam programar. Logo, o raciocínio durante o desenvolvimento dificilmente nos levava à utilização dos recursos do paradigma funcional.
+
+Apesar disso, concluímos que os dois paradigmas oferecem recursos úteis. A organização do código em classes, herança e polimorfismo, por exemplo, trouxeram facilidade no desenvolvimento do trabalho. Já a possibilidade de usar funções de ordem superior, como filter, map e outras, pode trazer flexibilidade ao código. 
+
+\section{Benefícios e Limitações}
+
+Durante o desenvolvimento do trabalho, uma das grandes vantagens da linguagem escolhida foi sua semelhança, sintaticamente, com a linguagem C++ e, portanto, com a linguagem C, linguagens com as quais as integrantes já estavam familizariadas às respectivas sintaxes.
+
+Além disso, C\# é uma linguagem com paradigma OO com diversos artifícios úteis já disponíveis, como tipos genéricos. Portanto, durante o desenvolvimento utilizando o paradigma OO, a estruturação do código utilizando os recursos desse paradigma aconteceu naturalmente à medida em que o código era incrementado. Em contrapartida, o desenvolvimento funcional não foi intuitivo, e os diversos recursos do paradigma foram inseridos forçadamente no código.
+
+Por fim, acreditamos que nossos maiores desafios consistiram-se no desenvolvimento funcional e na utilização do \textit{framework} Monogame. Entretanto, por efeito da utilização desse \textit{framework}, os laços e atualizações necessárias para o fluxo do jogo tornaram-se significativamente mais fáceis de serem desenvolvidos.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Referências 
@@ -469,6 +980,12 @@ Em relação à linguagem, não houve grandes dificuldades. O maior desafio cons
 \href{https://docs.microsoft.com/en-us/dotnet/csharp/}{Microsoft - C\# / Documentation}
 
 \href{https://sophia.javeriana.edu.co/~cbustaca/docencia/POO-2016-01/documentos/Object%20Oriented%20Software%20Construction-Meyer.pdf}{Sophia Javeriana - Object Oriented Software Construction - Meyer}
+
+\href{https://stackoverflow.com/questions/10141124/any-difference-between-first-class-function-and-high-order-function}{Stackoverflow - Any Difference between first class function and high-order function}
+
+\href{https://weblogs.asp.net/dixin/understanding-csharp-features-7-higher-order-function}{Weblogs - Understanding Csharp Features}
+
+\href{https://www.sitepoint.com/functional-programming-pure-functions}{Sitepoint - Functional programming pure functions}
 
 %\nocite{*}
 %\bibliographystyle{abntex2-alf}
